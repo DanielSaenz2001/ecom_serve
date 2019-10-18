@@ -19,5 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::get('cliente/index',"ClienteController@index");
 Route::get('cliente/show/{id}',"ClienteController@show");
+
+
+Route::get('persona/index',"PersonaController@index");
+Route::get('persona/show/{id}',"PersonaController@show");
+

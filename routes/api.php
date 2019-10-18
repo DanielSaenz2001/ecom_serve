@@ -26,3 +26,10 @@ Route::post('cliente', 'ClienteController@create');
 Route::put('cliente/{id}', 'ClienteController@update');
 Route::delete('cliente/{id}', 'ClienteController@destroy');
 
+Route::get('persona', 'PersonaController@index');
+Route::get('persona/{id}','PersonaController@show');
+Route::post('persona', 'PersonaController@create');
+Route::put('persona/{id}', 'PersonaController@update');
+Route::delete('persona/{id}', 'PersonaController@destroy');
+
+
