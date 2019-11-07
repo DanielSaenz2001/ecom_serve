@@ -19,13 +19,17 @@ header('Access-Control-Allow-Headers: Authorization,Origin, Content-Type, X-Auth
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+Route::group([
+    'middleware' => 'api',
+], function () {
     Route::post('login', 'AuthController@login');
     Route::post('signup', 'AuthController@signup');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
-
-
-Route::get('cliente', 'ClienteController@index');
+    Route::get('cliente', 'ClienteController@index');
 Route::get('cliente/{id}','ClienteController@show');
 Route::post('cliente', 'ClienteController@create');
 Route::put('cliente/{id}', 'ClienteController@update');
@@ -36,14 +40,4 @@ Route::get('persona/{id}','PersonaController@show');
 Route::post('persona', 'PersonaController@create');
 Route::put('persona/{id}', 'PersonaController@update');
 Route::delete('persona/{id}', 'PersonaController@destroy');
-
-
-Route::group([
-    'middleware' => 'api',
-], function () {
-    Route::post('login', 'AuthController@login');
-    Route::post('signup', 'AuthController@signup');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    
 });

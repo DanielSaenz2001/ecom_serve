@@ -17,13 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::get('cliente/index',"ClienteController@index");
-Route::get('cliente/show/{id}',"ClienteController@show");
-
-
 Route::get('persona/index',"PersonaController@index");
 Route::get('persona/show/{id}',"PersonaController@show");
 
+Route::get('departamentos', 'DepartamentoController@index');
+Route::get('paises', 'PaisController@index');
